@@ -74,21 +74,3 @@ function addNodes(url, container, re) {
 
   return true;
 };
-
-/**
- * Get base URL of link.
- *
- * @function getBaseURL
- * @param {string} link
- */
-function getBaseURL(link) {
-  const result = link.match(reBaseURL);
-
-  if (!result) {
-    return null;
-  } else if (result[1]) {
-    return `${result[1]}/`;
-  } else {
-    return `http://${result[2] || result[3]}/`;
-  }
-};
